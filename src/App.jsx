@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/styles.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import AppRouter from './components/AppRouter';
+import { AuthContext } from './context/context';
 import Navbar from './components/Navbar';
-import Games from './pages/Games';
-import Library from './pages/Library';
-import Friends from './pages/Friends';
-import Profile from './pages/Profile';
 
 function App() {
+  const [isAuth, setIsAuth] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('auth')) {
+      setIsAuth(true);
+    }
+  }, []);
+
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route path="/games" component={Games} exact />
-        <Route path="/library" component={Library} exact />
-        <Route path="/friends" component={Friends} exact />
-        <Route path="/profile" component={Profile} exact />
-      </Switch>
-    </BrowserRouter>
+    <AuthContext.Provider value={{ isAuth, setIsAuth }}>
+      <BrowserRouter>
+        {isAuth && <Navbar />}
+        <AppRouter />
+      </BrowserRouter>
+    </AuthContext.Provider>
   );
 }
 
