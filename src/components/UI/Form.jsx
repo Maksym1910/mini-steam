@@ -4,10 +4,12 @@ import React from 'react';
 import '../../styles/form.css';
 
 const Form = ({ children, ...props }) => (
-  <form {...props}>
-    <h2 className="form__title">{props.title}</h2>
-    {children}
-  </form>
+  <div className="form-wrapper">
+    <form className="form" {...props}>
+      <h2 className="form__title">{props.title}</h2>
+      {children}
+    </form>
+  </div>
 );
 
 export default Form;
