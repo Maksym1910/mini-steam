@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import Form from '../components/UI/Form';
 import Input from '../components/UI/Input';
 import Button from '../components/UI/Button';
-import '../styles/profile.css';
+import '../styles/login.css';
 import '../styles/buttons.css';
 import { AuthContext } from '../context/context';
 
@@ -18,13 +18,13 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <Form className="form" title="Sign In" onSubmit={login}>
+    <section className="login">
+      <Form title="Sign In" onSubmit={login}>
         <Input inputField="Email" type="text" />
         <Input inputField="Password" type="password" />
-        <Button className="button-main">Login</Button>
+        <Button className="button button--primary button-block">Login</Button>
       </Form>
-    </div>
+    </section>
   );
 };
 
