@@ -24,9 +24,18 @@ const Profile = () => {
   return (
     <section className="profile">
       <Form title="Profile">
-        <Input inputField="Username" />
-        <Input inputField="Email" />
-        <Input inputField="Age" />
+        <fieldset className="input">
+          <label>Username</label>
+          <Input inputField="Username" />
+        </fieldset>
+        <fieldset className="input">
+          <label>Email</label>
+          <Input inputField="Email" />
+        </fieldset>
+        <fieldset className="input">
+          <label>Password</label>
+          <Input inputField="Password" />
+        </fieldset>
         <Button className="button button--primary button-block" onClick={save}>Save</Button>
         <Button className="button button--warn button-block" onClick={logout}>Log out</Button>
       </Form>
