@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Library = () => (
-  <div>Library</div>
-);
+const Library = () => {
+  return (
+    <div>Library</div>
+  );
+};
 
 export default Library;

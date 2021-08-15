@@ -1,5 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useContext } from 'react';
 import '../styles/profile.css';
 import '../styles/buttons.css';
