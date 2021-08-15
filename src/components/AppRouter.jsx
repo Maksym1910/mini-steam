@@ -8,8 +8,8 @@ import { privateRoutes, publicRoutes } from '../router/router';
 const AppRouter = () => {
   const { isAuth } = useContext(AuthContext);
   return (
-    isAuth
-      ? (
+    isAuth ?
+      (
         <Switch>
           {privateRoutes.map((route) => (
             <Route
@@ -21,8 +21,8 @@ const AppRouter = () => {
           ))}
           <Redirect to="/games" />
         </Switch>
-      )
-      : (
+      ) :
+      (
         <Switch>
           {publicRoutes.map((route) => (
             <Route
