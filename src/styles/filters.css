@@ -1,0 +1,33 @@
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 30px;
+    padding: 0 10px;
+}
+
+.filter-section__tags {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: none;
+}
+
+.filter-section__tag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+}
+
+.filter-section__input {
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    border-radius: 4px;
+}
+
+.filter-section__label {
+    text-transform: capitalize;
+}
