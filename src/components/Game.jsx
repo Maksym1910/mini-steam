@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import Button from './UI/Button';
 
@@ -10,7 +9,7 @@ const Game = ({ gameInfo }) => (
     </div>
     <div className="game-card__desc">
       <p className="game-card__desc-text">{gameInfo.desc}</p>
-      <Button className="button button--primary button-block">Add to Library</Button>
+      <Button className="button button--primary button-block btn-bottom ">Add to Library</Button>
     </div>
   </div>
 );
