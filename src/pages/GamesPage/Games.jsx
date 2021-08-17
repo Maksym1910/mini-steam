@@ -1,5 +1,4 @@
 import React, { useContext, useMemo, useState } from 'react';
-import '../../styles/games.css';
 import GamesList from '../../components/GamesList/GamesList';
 import GamesFilters from '../../components/GamesFilters/GamesFilters';
 import Search from '../../components/Search/Search';
@@ -55,7 +54,7 @@ const Games = () => {
         filter={filter}
         setFilter={setFilter}
       />
-      <section className="featured-games">
+      <section className={styles.featuredGamesContainer}>
         <h2 className="games-section__title">Featured Games</h2>
         <div className={styles.container}>
           <GamesList games={fullFilteredGames} />

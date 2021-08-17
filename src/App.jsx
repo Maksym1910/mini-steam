@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
-import './styles/styles.css';
+import './styles/styles.scss';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
 import { AuthContext, GamesContext } from './context/context';

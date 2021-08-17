@@ -1,4 +1,4 @@
-import Games from '../pages/Games';
+import Games from '../pages/GamesPage/Games';
 import Library from '../pages/Library';
 import Friends from '../pages/Friends';
 import Profile from '../pages/Profile';
