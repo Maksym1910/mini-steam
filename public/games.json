@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Doom Ethereal",
     "desc": "adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "5 UAH",
+    "price": "79 UAH",
     "tags": ["indie"]
   },
   {
@@ -17,28 +17,28 @@
     "id": 3,
     "title": "CSGO",
     "desc": "adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "50 UAH",
+    "price": "200 UAH",
     "tags": ["adventure"]
   },
   {
     "id": 4,
     "title": "Metro",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "71 UAH",
+    "price": "300 UAH",
     "tags": ["indie", "adventure"]
   },
   {
     "id": 5,
     "title": "Pocker",
     "desc": "Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "489 UAH",
+    "price": "350 UAH",
     "tags": ["indie"]
   },
   {
     "id": 6,
     "title": "Sims 2",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "123 UAH",
+    "price": "489 UAH",
     "tags": ["action", "adventure"]
   }
 ]

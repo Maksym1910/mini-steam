@@ -59,6 +59,7 @@
 .game-card-view__title {
   font-size: 1.5rem;
   font-weight: normal;
+  color: #fff;
 }
 
 .game-card-view__price {
@@ -80,9 +81,8 @@
 }
 
 
-.line {
-  background-color: rgb(156, 156, 156);
-  border-width: 0.5px;
+.section-sort {
+  margin-bottom: 30px;
 }
 
 

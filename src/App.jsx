@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import 'antd/dist/antd.css';
 import './styles/styles.css';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
