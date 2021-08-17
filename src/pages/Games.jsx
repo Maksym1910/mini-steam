@@ -10,6 +10,7 @@ const Games = () => {
   const { games } = useContext(GamesContext);
   const [filter, setFilter] = useState({ sort: '', query: '', tags: [] });
 
+<<<<<<< Updated upstream
   const sortedGames = useMemo(() => {
     if (filter.sort === 'title' && filter.tags.length) {
       const sortedGames = [...games].sort((a, b) => a[filter.sort].localeCompare(b[filter.sort]));
@@ -41,6 +42,13 @@ const Games = () => {
     return sortedGames.filter((game) =>
       game.title.toLowerCase().includes(filter.query.toLowerCase()));
   }, [filter.query, sortedGames, filter.tags]);
+=======
+  useEffect(() => {
+    fetch('games.json')
+        .then((response) => response.json())
+        .then((data) => setGames(data));
+  }, []);
+>>>>>>> Stashed changes
 
   return (
     <section className="games-section">
