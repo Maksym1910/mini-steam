@@ -2,43 +2,43 @@
   {
     "id": 1,
     "title": "Doom Ethereal",
-    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "200 UAH",
-    "tags": ["indie", "action", "adventure"]
+    "desc": "adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
+    "price": "5 UAH",
+    "tags": ["indie"]
   },
   {
     "id": 2,
     "title": "Dota",
-    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "200 UAH",
-    "tags": ["indie", "action", "adventure"]
+    "desc": "dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
+    "price": "100 UAH",
+    "tags": ["action"]
   },
   {
     "id": 3,
     "title": "CSGO",
-    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "200 UAH",
-    "tags": ["indie", "action", "adventure"]
+    "desc": "adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
+    "price": "50 UAH",
+    "tags": ["adventure"]
   },
   {
     "id": 4,
     "title": "Metro",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "200 UAH",
-    "tags": ["indie", "action", "adventure"]
+    "price": "71 UAH",
+    "tags": ["indie", "adventure"]
   },
   {
     "id": 5,
     "title": "Pocker",
-    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "200 UAH",
-    "tags": ["indie", "action", "adventure"]
+    "desc": "Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
+    "price": "489 UAH",
+    "tags": ["indie"]
   },
   {
     "id": 6,
     "title": "Sims 2",
     "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui animi expedita facilis repellat sed non quos possimus rem consectetur exercitationem harum, vero ex, vero exvero ex",
-    "price": "200 UAH",
-    "tags": ["indie", "action", "adventure"]
+    "price": "123 UAH",
+    "tags": ["action", "adventure"]
   }
 ]

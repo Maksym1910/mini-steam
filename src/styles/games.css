@@ -69,25 +69,22 @@
 }
 
 .game-card__desc {
+  display: flex;
+  flex-direction: column;
+  white-space: pre-wrap;
   padding: 20px;
 }
 
 .game-card__desc-text {
-  margin-bottom: 10px;
+  margin-bottom: auto;
 }
+
 
 .line {
   background-color: rgb(156, 156, 156);
   border-width: 0.5px;
-  background-color: rgb(156, 156, 156);
 }
 
-.aside {
-  width: 300px;
-  flex: 1;
-  padding: 0 10px;
-  background-color: hotpink;
-}
 
 @media (max-width: 1040px) {
   .game-card {
