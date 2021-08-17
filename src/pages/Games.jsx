@@ -11,8 +11,8 @@ const Games = () => {
 
   useEffect(() => {
     fetch('games.json')
-      .then((response) => response.json())
-      .then((data) => setGames(data));
+        .then((response) => response.json())
+        .then((data) => setGames(data));
   }, []);
 
   return (
