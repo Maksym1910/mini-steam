@@ -1,16 +1,20 @@
 import React, { useContext, useMemo, useState } from 'react';
-import Input from '../components/UI/Input';
 import Button from '../components/UI/Button';
 import '../styles/games.css';
 import GamesList from '../components/GamesList';
 import GamesFilters from '../components/GamesFilters';
 import { GamesContext } from '../context/context';
+import { Input } from 'antd';
 
 const Games = () => {
   const { games } = useContext(GamesContext);
-  const [filter, setFilter] = useState({ sort: '', query: '', tags: [] });
+  const [filter, setFilter] = useState({ sort: '', query: '', tags: [], minPrice: 0 });
 
   const sortedGames = useMemo(() => {
+    if (filter.minPrice) {
+      return games.filter((game) => parseFloat(game.price) > filter.minPrice);
+    }
+
     if (filter.sort === 'title' && filter.tags.length) {
       const sortedGames = [...games].sort((a, b) => a[filter.sort].localeCompare(b[filter.sort]));
       return sortedGames.filter((game) => game.tags.some((tag) => filter.tags.includes(tag)));
@@ -35,12 +39,13 @@ const Games = () => {
     }
 
     return games;
-  }, [filter.sort, games, filter.tags]);
+  }, [filter.sort, games, filter.tags, filter.minPrice]);
 
   const fullFilteredGames = useMemo(()=> {
     return sortedGames.filter((game) =>
       game.title.toLowerCase().includes(filter.query.toLowerCase()));
   }, [filter.query, sortedGames, filter.tags]);
+
 
   return (
     <section className="games-section">
@@ -60,7 +65,6 @@ const Games = () => {
           <h2 className="games-section__title">Featured Games</h2>
           <div className="featured-games-container">
             <GamesList games={fullFilteredGames} />
-            <hr className="line" />
             <GamesFilters
               filter={filter}
               setFilter={setFilter}

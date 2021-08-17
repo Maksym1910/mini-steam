@@ -1,20 +1,26 @@
 import React from 'react';
+import { Select } from 'antd';
+const { Option } = Select;
 
 const SortSelect = ({ options, defaultValue, value, onChange }) => {
+  const handleChange = (value) => {
+    onChange(value);
+  };
+
   return (
-    <section>
+    <section className="section-sort">
       <h2>Sort By</h2>
-      <select
+      <Select
         value={value}
-        onChange={(event) => onChange(event.target.value)}
+        onChange={handleChange}
       >
-        <option disabled value="">{defaultValue}</option>
+        <Option disabled value="">{defaultValue}</Option>
         {options.map((option) =>
-          <option value={option.value} key={option.value}>
+          <Option value={option.value} key={option.value}>
             {option.body}
-          </option>,
+          </Option>,
         )}
-      </select>
+      </Select>
     </section>
   );
 };

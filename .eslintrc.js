@@ -25,5 +25,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
     'no-unused-vars': 'warn',
+    'linebreak-style': [2, 'windows'],
   },
 };
