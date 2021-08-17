@@ -1,10 +1,11 @@
 import React, { useContext, useMemo, useState } from 'react';
-import Button from '../components/UI/Button';
-import '../styles/games.css';
-import GamesList from '../components/GamesList';
-import GamesFilters from '../components/GamesFilters';
-import { GamesContext } from '../context/context';
-import { Input } from 'antd';
+import '../../styles/games.css';
+import GamesList from '../../components/GamesList/GamesList';
+import GamesFilters from '../../components/GamesFilters/GamesFilters';
+import Search from '../../components/Search/Search';
+import { GamesContext } from '../../context/context';
+import styles from './Games.module.scss';
+import Layout from '../../components/Layout/Layout';
 
 const Games = () => {
   const { games } = useContext(GamesContext);
@@ -48,31 +49,23 @@ const Games = () => {
 
 
   return (
-    <section className="games-section">
-      <div className="games-section-wrapper">
-        <section>
-          <h2 className="games-section__title">Games</h2>
-          <p>Search Games</p>
-          <fieldset className="games-section__input">
-            <Input
-              value={filter.query}
-              onChange={(event) => setFilter({ ...filter, query: event.target.value })}
-            />
-            <Button className="button button--primary">Search</Button>
-          </fieldset>
-        </section>
-        <section className="featured-games">
-          <h2 className="games-section__title">Featured Games</h2>
-          <div className="featured-games-container">
-            <GamesList games={fullFilteredGames} />
-            <GamesFilters
-              filter={filter}
-              setFilter={setFilter}
-            />
-          </div>
-        </section>
-      </div>
-    </section>
+    <Layout>
+      <Search
+        title='Games'
+        filter={filter}
+        setFilter={setFilter}
+      />
+      <section className="featured-games">
+        <h2 className="games-section__title">Featured Games</h2>
+        <div className={styles.container}>
+          <GamesList games={fullFilteredGames} />
+          <GamesFilters
+            filter={filter}
+            setFilter={setFilter}
+          />
+        </div>
+      </section>
+    </Layout>
   );
 };
 

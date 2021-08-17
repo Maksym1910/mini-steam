@@ -1,26 +1,26 @@
 import React from 'react';
-import FilterByTag from './FilterByTag';
-import '../styles/filters.css';
-import SortSelect from './SortSelect';
+import FilterByTag from '../FilterByTag/FilterByTag';
+import SortSelect from '../SortSelect';
 import { Slider } from 'antd';
+import styles from './GamesFilters.module.scss';
 
 const GamesFilters = ({ filter, setFilter }) => {
   const filterByTags = (checkedValues) => {
     setFilter({ ...filter, tags: checkedValues });
   };
 
-  function onAfterChange(value) {
+  const getPickedValue = (value) => {
     setFilter({ ...filter, minPrice: value });
-  }
+  };
 
   return (
-    <section className="filter-section">
+    <section className={styles.container}>
       <h2>Filter by Price</h2>
       <Slider
         max={500}
-        onAfterChange={onAfterChange}
+        onAfterChange={getPickedValue}
       />
-      <h2 style={{ textAlign: 'center' }}>{filter.minPrice}</h2>
+      <h2 className={styles.sliderPrice}>{filter.minPrice}</h2>
       <SortSelect
         defaultValue="Sort by"
         options={[

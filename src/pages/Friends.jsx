@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Search from '../components/Search/Search';
+import Layout from '../components/Layout/Layout';
 
-const Friends = () => (
-  <div>Friends</div>
-);
+const Friends = (props) => {
+  const [filter, setFilter] = useState({});
+  return (
+    <Layout>
+      <Search
+        title='Friends'
+        filter={filter}
+        setFilter={setFilter}
+      />
+    </Layout>
+  );
+};
+
 
 export default Friends;

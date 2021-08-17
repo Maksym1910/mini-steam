@@ -1,0 +1,36 @@
+.title {
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.subTitle {
+  margin: 0 0 5px;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 15px;
+  border: none;
+
+  .searchInput {
+    border-radius: 5px;
+
+    &:focus {
+      border-color: #6c69ff;
+    }
+  }
+
+  .searchButton {
+    color: #fff;
+    background-color: #6c69ff;
+    cursor: pointer;
+    border-color: #6c69ff;
+    border-radius: 5px;
+
+    &:hover {
+      color: #6c69ff;
+      background-color: #fff;
+    }
+  }
+}
+

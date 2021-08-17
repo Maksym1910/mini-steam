@@ -1,9 +1,9 @@
 import React from 'react';
-import Game from './Game';
-import '../styles/games.css';
+import Game from '../Game/Game';
+import styles from './GamesList.module.scss';
 
 const GamesList = ({ games }) => (
-  <section className="featured-games-wrapper">
+  <section className={styles.container}>
     {games.map((game) => (
       <Game gameInfo={game} key={game.id} />
     ))}
