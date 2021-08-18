@@ -3,12 +3,12 @@ import { Input, Button } from 'antd';
 import styles from './Search.module.scss';
 
 const Search = (props) => {
-  const input = useRef(null);
   const {
     title,
     filter,
     setFilter,
   } = props;
+  const input = useRef(null);
 
   const searchGame = () => {
     setFilter({ ...filter, query: input.current.state.value });

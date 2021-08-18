@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import 'antd/dist/antd.css';
-import './styles/styles.scss';
+import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
 import { AuthContext, GamesContext } from './context/context';
-import Navbar from './components/Navbar';
+import Header from './components/Header/Header';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -27,7 +27,7 @@ function App() {
     <AuthContext.Provider value={{ isAuth, setIsAuth }}>
       <GamesContext.Provider value={{ games, setGames }} >
         <BrowserRouter>
-          {isAuth && <Navbar />}
+          {isAuth && <Header />}
           <AppRouter />
         </BrowserRouter>
       </GamesContext.Provider>

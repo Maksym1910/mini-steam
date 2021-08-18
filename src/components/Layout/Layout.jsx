@@ -2,10 +2,14 @@ import React from 'react';
 import styles from './Layout.module.scss';
 
 const Layout = (props) => {
-  const { children } = props;
+  const {
+    children,
+    container = styles.container,
+  } = props;
+
   return (
     <section className={styles.section}>
-      <div className={styles.container}>
+      <div className={container}>
         {children}
       </div>
     </section>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Search from '../components/Search/Search';
-import Layout from '../components/Layout/Layout';
+import Search from '../../components/Search/Search';
+import Layout from '../../components/Layout/Layout';
 
-const Friends = (props) => {
+const Friends = () => {
   const [filter, setFilter] = useState({});
   return (
     <Layout>

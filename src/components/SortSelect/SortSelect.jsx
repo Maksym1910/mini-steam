@@ -1,14 +1,22 @@
 import React from 'react';
 import { Select } from 'antd';
 const { Option } = Select;
+import styles from './SortSelect.module.scss';
 
-const SortSelect = ({ options, defaultValue, value, onChange }) => {
+const SortSelect = (props) => {
+  const {
+    options,
+    defaultValue,
+    value,
+    onChange,
+  } = props;
+
   const handleChange = (value) => {
     onChange(value);
   };
 
   return (
-    <section className="section-sort">
+    <section className={styles.container}>
       <h2>Sort By</h2>
       <Select
         value={value}

@@ -3,7 +3,12 @@ import { Checkbox } from 'antd';
 import styles from './FilterByTag.module.scss';
 import classNames from 'classnames';
 
-const FilterByTag = ({ tags, onChange }) => {
+const FilterByTag = (props) => {
+  const {
+    tags,
+    onChange,
+  } = props;
+
   const checkedValues = (checkedValues) => {
     onChange(checkedValues);
   };
