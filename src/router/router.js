@@ -1,8 +1,8 @@
-import Games from '../pages/Games';
-import Library from '../pages/Library';
-import Friends from '../pages/Friends';
-import Profile from '../pages/Profile';
-import Login from '../pages/Login';
+import Games from '../pages/GamesPage/Games';
+import Library from '../pages/LibraryPage/Library';
+import Friends from '../pages/FriendsPage/Friends';
+import Profile from '../pages/ProfilePage/Profile';
+import Login from '../pages/LoginPage/Login';
 
 export const privateRoutes = [
   { path: '/games', component: Games, exact: true },

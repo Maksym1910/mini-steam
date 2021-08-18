@@ -1,0 +1,35 @@
+.button {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.buttonPrimary {
+  background-color: #6c69ff;
+
+  &:hover {
+    background-color: #9593ee;
+  }
+}
+
+.buttonWarn {
+  background-color: #FF6E6E;
+
+  &:hover {
+    background-color: #f18686;
+  }
+}
+
+.buttonBlock {
+  width: 100%;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

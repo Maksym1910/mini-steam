@@ -1,0 +1,50 @@
+.gameCard {
+  max-width: 30%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  background: linear-gradient(180deg, #adacec 50%, #fff 50%);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+
+  @media (max-width: 1140px) {
+    max-width: 40%;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
+
+  .gameCardView {
+    display: grid;
+    padding: 20px;
+    color: #fff;
+
+    .gameCardTitle {
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: #fff;
+    }
+
+    .gameCardPrice {
+      justify-self: end;
+      align-self: end;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+  }
+
+  .gameCardDesc{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    white-space: pre-wrap;
+
+    .gameCardDescText {
+      margin-bottom: auto;
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,10 @@
+.tagContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: none;
+}
+
+.tagLabel {
+  text-transform: capitalize;
+}

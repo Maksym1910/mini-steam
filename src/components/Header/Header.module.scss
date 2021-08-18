@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  .headerLogo {
+    margin-right: 40px;
+  }
+
+  .navList {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .navItem {
+      font-size: 20px;
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: #6C69FF;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
