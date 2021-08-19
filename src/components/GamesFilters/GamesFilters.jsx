@@ -10,6 +10,10 @@ const GamesFilters = (props) => {
     setFilter,
   } = props;
 
+  const filterByPrice = (price) => {
+    setFilter({ ...filter, minPrice: price });
+  };
+
   const filterByTags = (checkedValues) => {
     setFilter({ ...filter, tags: checkedValues });
   };
@@ -18,7 +22,7 @@ const GamesFilters = (props) => {
     <section className={styles.container}>
       <FilterByPrice
         filter={filter}
-        setFilter={setFilter}
+        onChange={filterByPrice}
       />
       <SortSelect
         defaultValue="Sort by"

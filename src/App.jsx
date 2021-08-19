@@ -13,13 +13,13 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('auth')) {
       setIsAuth(true);
-    }
 
-    fetch('games.json')
-        .then((response) => response.json())
-        .then((data) => {
-          setGames(data);
-        });
+      fetch('games.json')
+          .then((response) => response.json())
+          .then((data) => {
+            setGames(data);
+          });
+    }
   }, []);
 
 
