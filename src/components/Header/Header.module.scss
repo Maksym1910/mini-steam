@@ -8,6 +8,10 @@
 
   .headerLogo {
     margin-right: 40px;
+
+    @media (max-width: 426px) {
+      margin-right: 20px;
+    }
   }
 
   .navList {
@@ -26,6 +30,14 @@
       &:hover {
         color: #6C69FF;
       }
+
+      @media (max-width: 426px) {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 426px) {
+      gap: 10px;
     }
   }
 }

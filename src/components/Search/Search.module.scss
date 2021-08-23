@@ -20,6 +20,10 @@
     }
   }
 
+  @media (max-width: 426px) {
+    flex-direction: column;
+  }
+
   .searchButton {
     color: #fff;
     background-color: #6c69ff;
