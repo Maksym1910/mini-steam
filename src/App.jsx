@@ -3,16 +3,19 @@ import 'antd/dist/antd.css';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
-import { AuthContext, GamesContext } from './context/context';
+import { GamesContext } from './context/context';
 import Header from './components/Header/Header';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  const dispatch = useDispatch();
   const [games, setGames] = useState([]);
+  const [libraryGames, setLibraryGames] = useState([]);
 
   useEffect(() => {
-    if (localStorage.getItem('auth')) {
-      setIsAuth(true);
+    if (localStorage.getItem('AUTH')) {
+      dispatch({ type: 'AUTH', payload: true });
 
       fetch('games.json')
           .then((response) => response.json())
@@ -24,14 +27,19 @@ function App() {
 
 
   return (
-    <AuthContext.Provider value={{ isAuth, setIsAuth }}>
-      <GamesContext.Provider value={{ games, setGames }} >
-        <BrowserRouter>
-          {isAuth && <Header />}
-          <AppRouter />
-        </BrowserRouter>
-      </GamesContext.Provider>
-    </AuthContext.Provider>
+    <GamesContext.Provider value={
+      {
+        games,
+        setGames,
+        libraryGames,
+        setLibraryGames,
+      }
+    } >
+      <BrowserRouter>
+        {isAuth && <Header />}
+        <AppRouter />
+      </BrowserRouter>
+    </GamesContext.Provider>
   );
 }
 
