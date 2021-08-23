@@ -18,7 +18,7 @@ function App() {
       dispatch({ type: 'AUTH', payload: true });
 
       setIsLoading(true);
-      fetch('games.json')
+      fetch('gamesData.json')
           .then((response) => response.json())
           .then((data) => {
             setGames(data);
