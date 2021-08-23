@@ -11,30 +11,25 @@ function App() {
   const isAuth = useSelector((state) => state.auth.isAuth);
   const dispatch = useDispatch();
   const [games, setGames] = useState([]);
-  const [libraryGames, setLibraryGames] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem('AUTH')) {
       dispatch({ type: 'AUTH', payload: true });
 
+      setIsLoading(true);
       fetch('games.json')
           .then((response) => response.json())
           .then((data) => {
             setGames(data);
+            setIsLoading(false);
           });
     }
   }, []);
 
 
   return (
-    <GamesContext.Provider value={
-      {
-        games,
-        setGames,
-        libraryGames,
-        setLibraryGames,
-      }
-    } >
+    <GamesContext.Provider value={{ games, setGames, isLoading }} >
       <BrowserRouter>
         {isAuth && <Header />}
         <AppRouter />
