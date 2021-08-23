@@ -36,11 +36,12 @@
   .gameCardDesc{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     white-space: pre-wrap;
 
     .gameCardDescText {
-      margin-bottom: auto;
+      margin-bottom: 15px;
     }
   }
 }

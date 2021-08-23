@@ -9,9 +9,12 @@ const GamesList = (props) => {
 
   return (
     <section className={styles.container}>
-      {games.map((game) => (
-        <Game gameInfo={game} key={game.id} />
-      ))}
+      {games.length ?
+        games.map((game) => (
+          <Game gameInfo={game} key={game.id} />
+        )) :
+        <h2 className={styles.noFoundMessage}>No Games Found!</h2>
+      }
     </section>
   );
 };
