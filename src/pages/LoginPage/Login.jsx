@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Form from '../../components/Form/Form';
 import Button from '../../components/Button/Button';
-import { AuthContext } from '../../context/context';
 import FormItem from '../../components/Form/FormItem';
 import styles from './Login.module.scss';
 import btnStyles from '../../components/Button/Button.module.scss';
 import classNames from 'classnames';
+import { useDispatch } from 'react-redux';
+import { authAction } from '../../redux/actions/authActions';
 
 const Login = () => {
-  const { setIsAuth } = useContext(AuthContext);
+  const dispatch = useDispatch();
 
   const login = (event) => {
     event.preventDefault();
-    setIsAuth(true);
-    localStorage.setItem('auth', 'true');
+    dispatch(authAction(true));
+    localStorage.setItem('AUTH', 'true');
   };
 
   return (

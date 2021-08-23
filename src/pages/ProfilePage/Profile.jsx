@@ -1,16 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './Profile.module.scss';
 import btnStyles from '../../components/Button/Button.module.scss';
 import classNames from 'classnames';
 import Form from '../../components/Form/Form';
 import Button from '../../components/Button/Button';
-import { AuthContext } from '../../context/context';
 import FormItem from '../../components/Form/FormItem';
+import { useDispatch } from 'react-redux';
+import { authAction } from '../../redux/actions/authActions';
 
 const Profile = () => {
-  const {
-    setIsAuth,
-  } = useContext(AuthContext);
+  const dispatch = useDispatch();
 
   const save = (event) => {
     event.preventDefault();
@@ -18,8 +17,8 @@ const Profile = () => {
   };
 
   const logout = () => {
-    setIsAuth(false);
-    localStorage.removeItem('auth');
+    dispatch(authAction(false));
+    localStorage.removeItem('AUTH');
   };
 
   return (
