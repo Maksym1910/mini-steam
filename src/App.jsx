@@ -6,6 +6,7 @@ import AppRouter from './components/AppRouter';
 import { GamesContext } from './context/context';
 import Header from './components/Header/Header';
 import { useDispatch, useSelector } from 'react-redux';
+import { authAction } from './redux/actions/authActions';
 
 function App() {
   const isAuth = useSelector((state) => state.auth.isAuth);
@@ -15,21 +16,12 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('AUTH')) {
-      dispatch({ type: 'AUTH', payload: true });
-
-      setIsLoading(true);
-      fetch('gamesData.json')
-          .then((response) => response.json())
-          .then((data) => {
-            setGames(data);
-            setIsLoading(false);
-          });
+      dispatch(authAction(true));
     }
   }, []);
 
-
   return (
-    <GamesContext.Provider value={{ games, setGames, isLoading }} >
+    <GamesContext.Provider value={{ games, setGames, isLoading, setIsLoading }} >
       <BrowserRouter>
         {isAuth && <Header />}
         <AppRouter />

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import GamesList from '../../components/GamesList/GamesList';
 import GamesFilters from '../../components/GamesFilters/GamesFilters';
 import Search from '../../components/Search/Search';
@@ -8,7 +8,7 @@ import Layout from '../../components/Layout/Layout';
 import { useGames } from '../../hooks/useGames';
 
 const Games = () => {
-  const { games } = useContext(GamesContext);
+  const { games, setGames, setIsLoading } = useContext(GamesContext);
   const [filter, setFilter] = useState({ sort: '', query: '', tags: [], minPrice: 0 });
   const fullFilteredGames = useGames({
     games,
@@ -17,6 +17,17 @@ const Games = () => {
     minPrice: filter.minPrice,
     query: filter.query,
   });
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch('gamesData.json')
+        .then((response) => response.json())
+        .then((data) => {
+          setGames(data);
+          setIsLoading(false);
+        });
+  }, []);
+
 
   return (
     <Layout>

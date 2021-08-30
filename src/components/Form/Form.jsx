@@ -7,6 +7,7 @@ const CustomForm = (props) => {
   const {
     children,
     title,
+    onFinish,
   } = props;
 
   return (
@@ -16,6 +17,7 @@ const CustomForm = (props) => {
       <Form
         name="normal_login"
         className="login-form"
+        onFinish={onFinish}
       >
         <h2 className={styles.formTitle}>{title}</h2>
         {children}
