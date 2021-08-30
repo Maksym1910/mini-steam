@@ -12,7 +12,6 @@ const Login = () => {
   const login = async (values) => {
     dispatch(authAction(true));
     localStorage.setItem('AUTH', true);
-    console.log(values);
   };
 
   return (

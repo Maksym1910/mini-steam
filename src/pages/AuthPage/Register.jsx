@@ -5,7 +5,7 @@ import Auth from '../../components/Auth/Auth';
 
 const Register = () => {
   const register = async (values) => {
-    console.log(values);
+    alert('Register');
   };
 
   return (
