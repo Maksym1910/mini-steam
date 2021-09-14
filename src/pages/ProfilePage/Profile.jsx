@@ -7,6 +7,7 @@ import Button from '../../components/Button/Button';
 import FormItem from '../../components/Form/FormItem';
 import { useDispatch } from 'react-redux';
 import { authAction } from '../../redux/actions/authActions';
+import { clearGamesAction } from '../../redux/actions/gamesActions';
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Profile = () => {
   const logout = () => {
     dispatch(authAction(false));
     localStorage.removeItem('AUTH');
+    dispatch(clearGamesAction([]));
   };
 
   return (

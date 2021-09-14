@@ -1,14 +1,17 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import GamesList from '../../components/GamesList/GamesList';
 import GamesFilters from '../../components/GamesFilters/GamesFilters';
 import Search from '../../components/Search/Search';
-import { GamesContext } from '../../context/context';
 import styles from './Games.module.scss';
 import Layout from '../../components/Layout/Layout';
 import { useGames } from '../../hooks/useGames';
+import { useSelector } from 'react-redux';
 
 const Games = () => {
-  const { games, setGames, setIsLoading } = useContext(GamesContext);
+  const {
+    games,
+  } = useSelector((state) => state.games);
+
   const [filter, setFilter] = useState({ sort: '', query: '', tags: [], minPrice: 0 });
   const fullFilteredGames = useGames({
     games,
@@ -17,17 +20,6 @@ const Games = () => {
     minPrice: filter.minPrice,
     query: filter.query,
   });
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch('gamesData.json')
-        .then((response) => response.json())
-        .then((data) => {
-          setGames(data);
-          setIsLoading(false);
-        });
-  }, []);
-
 
   return (
     <Layout>

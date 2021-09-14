@@ -5,28 +5,25 @@ import classNames from 'classnames';
 import btnStyles from '../Button/Button.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  addToLibraryAction,
-  removeFromLibraryAction,
-} from '../../redux/actions/libraryActions';
+  addGameToLibraryAction,
+  removeGameFromLibraryAction,
+} from '../../redux/actions/gamesActions';
 
 const Game = (props) => {
   const dispatch = useDispatch();
-  const libraryGames = useSelector((state) => state.library.libraryGames);
-
-  const {
-    gameInfo,
-  } = props;
+  const { libraryGames } = useSelector((state) => state.games);
+  const { gameInfo } = props;
 
   const addGameToLibrary = (game) => {
     if (libraryGames.includes(game)) {
       alert('You have already added this game to your library');
       return;
     }
-    dispatch(addToLibraryAction([...libraryGames, game]));
+    dispatch(addGameToLibraryAction([...libraryGames, game]));
   };
 
   const removeFromLibrary = (game) => {
-    dispatch(removeFromLibraryAction(game));
+    dispatch(removeGameFromLibraryAction(game));
   };
 
   const downloadGame = () => {
@@ -37,6 +34,10 @@ const Game = (props) => {
     alert('Game share');
   };
 
+  const isGameInLibrary = () => {
+    return libraryGames.some((game) => game.id === gameInfo.id);
+  };
+
   return (
     <div className={styles.gameCard}>
       <div className={styles.gameCardView}>
@@ -45,7 +46,8 @@ const Game = (props) => {
       </div>
       <div className={styles.gameCardDesc}>
         <p className={styles.gameCardDescText}>{gameInfo.desc}</p>
-        {libraryGames.includes(gameInfo) ?
+        {
+          isGameInLibrary() ?
           <div className={btnStyles.libraryBtnContainer}>
             <div className={btnStyles.btnContainerRow}>
               <Button

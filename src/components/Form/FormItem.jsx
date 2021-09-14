@@ -10,15 +10,20 @@ const FormItem = (props) => {
 
   return (
     <Form.Item
-      type={type}
       name={title}
     >
       <label>
         {title}
-        <Input
-          placeholder={title}
-          className={styles.formInput}
-        />
+        {type === 'password' ?
+          <Input.Password
+            placeholder={title}
+            className={styles.formInput}
+          /> :
+          <Input
+            placeholder={title}
+            className={styles.formInput}
+          />
+        }
       </label>
     </Form.Item>
   );

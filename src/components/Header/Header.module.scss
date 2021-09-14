@@ -36,6 +36,10 @@
       }
     }
 
+    .navItemActive {
+      color: #6c69ff;
+    }
+
     @media (max-width: 426px) {
       gap: 10px;
     }

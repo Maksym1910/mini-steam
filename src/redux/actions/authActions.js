@@ -1,4 +1,4 @@
-export const authAction = (payload) => ({
+export const authAction = (isLoggedIn) => ({
   type: 'AUTH',
-  payload,
+  payload: isLoggedIn,
 });

@@ -4,7 +4,7 @@ import GamesList from '../../components/GamesList/GamesList';
 import { useSelector } from 'react-redux';
 
 const Library = () => {
-  const libraryGames = useSelector((state) => state.library.libraryGames);
+  const { libraryGames } = useSelector((state) => state.games);
 
   return (
     <Layout>
