@@ -18,7 +18,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "deploy": "npm run build && cd build && copy index.html 200.html && surge"
   },
   "eslintConfig": {
     "extends": [
