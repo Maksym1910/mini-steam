@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Search from '../../components/Search/Search';
 import Layout from '../../components/Layout/Layout';
 
-const Friends = () => {
+const FriendsPage = () => {
   const [filter, setFilter] = useState({});
   return (
     <Layout>
@@ -16,4 +16,4 @@ const Friends = () => {
 };
 
 
-export default Friends;
+export default FriendsPage;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Profile.module.scss';
+import styles from './ProfilePage.module.scss';
 import btnStyles from '../../components/Button/Button.module.scss';
 import classNames from 'classnames';
 import Form from '../../components/Form/Form';
@@ -9,12 +9,12 @@ import { useDispatch } from 'react-redux';
 import { authAction } from '../../redux/actions/authActions';
 import { clearGamesAction } from '../../redux/actions/gamesActions';
 
-const Profile = () => {
+const ProfilePage = () => {
   const dispatch = useDispatch();
 
   const save = (event) => {
     event.preventDefault();
-    alert('Profile saved');
+    alert('ProfilePage saved');
   };
 
   const logout = () => {
@@ -25,7 +25,7 @@ const Profile = () => {
 
   return (
     <section className={styles.profile}>
-      <Form title='Profile' >
+      <Form title='ProfilePage' >
         <FormItem
           type='text'
           title='Username'
@@ -57,4 +57,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;

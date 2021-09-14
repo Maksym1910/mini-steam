@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout';
 import GamesList from '../../components/GamesList/GamesList';
 import { useSelector } from 'react-redux';
 
-const Library = () => {
+const LibraryPage = () => {
   const { libraryGames } = useSelector((state) => state.games);
 
   return (
@@ -14,4 +14,4 @@ const Library = () => {
   );
 };
 
-export default Library;
+export default LibraryPage;

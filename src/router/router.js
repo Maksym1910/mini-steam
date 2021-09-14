@@ -1,15 +1,15 @@
-import Games from '../pages/GamesPage/Games';
-import Library from '../pages/LibraryPage/Library';
-import Friends from '../pages/FriendsPage/Friends';
-import Profile from '../pages/ProfilePage/Profile';
+import GamesPage from '../pages/GamesPage/GamesPage';
+import LibraryPage from '../pages/LibraryPage/LibraryPage';
+import FriendsPage from '../pages/FriendsPage/FriendsPage';
+import ProfilePage from '../pages/ProfilePage/ProfilePage';
 import Login from '../pages/AuthPage/Login';
 import Register from '../pages/AuthPage/Register';
 
 export const privateRoutes = [
-  { path: '/games', component: Games, exact: true },
-  { path: '/library', component: Library, exact: true },
-  { path: '/friends', component: Friends, exact: true },
-  { path: '/profile', component: Profile, exact: true },
+  { path: '/games', component: GamesPage, exact: true },
+  { path: '/library', component: LibraryPage, exact: true },
+  { path: '/friends', component: FriendsPage, exact: true },
+  { path: '/profile', component: ProfilePage, exact: true },
 ];
 
 export const publicRoutes = [

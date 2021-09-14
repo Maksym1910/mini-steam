@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import GamesList from '../../components/GamesList/GamesList';
 import GamesFilters from '../../components/GamesFilters/GamesFilters';
 import Search from '../../components/Search/Search';
-import styles from './Games.module.scss';
+import styles from './GamesPage.module.scss';
 import Layout from '../../components/Layout/Layout';
 import { useGames } from '../../hooks/useGames';
 import { useSelector } from 'react-redux';
 
-const Games = () => {
+const GamesPage = () => {
   const {
     games,
   } = useSelector((state) => state.games);
@@ -29,7 +29,7 @@ const Games = () => {
         setFilter={setFilter}
       />
       <section className={styles.featuredGamesContainer}>
-        <h2 className="games-section__title">Featured Games</h2>
+        <h2>Featured Games</h2>
         <div className={styles.container}>
           <GamesList games={fullFilteredGames} />
           <GamesFilters
@@ -42,4 +42,4 @@ const Games = () => {
   );
 };
 
-export default Games;
+export default GamesPage;
