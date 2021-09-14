@@ -61,11 +61,11 @@
   gap: 15px;
 }
 
-.animation1 {
-  animation: animation 0.8s both;
+.shakeAnimation {
+  animation: shake-animation 0.8s both;
 }
 
-@keyframes animation {
+@keyframes shake-animation {
   0%,
   100% {
     transform: translateX(0%);

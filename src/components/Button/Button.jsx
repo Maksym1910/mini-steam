@@ -12,7 +12,7 @@ const Button = (props) => {
     <button
       {...props}
       className={
-        animation ? `${className} ${styles.animation1}` : `${className}`
+        animation ? `${className} ${styles.shakeAnimation}` : `${className}`
       }
       onMouseEnter={() => {
         setAnimation(true);
