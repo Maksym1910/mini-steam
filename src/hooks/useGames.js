@@ -1,23 +1,30 @@
 import { useMemo } from 'react';
+import {
+  searchGames,
+  sortByMinPrice,
+  sortByPrice,
+  sortByTags,
+  sortByTitle,
+} from '../services/filterAndSearchService';
 
 export const useSortedGames = (games, sort, tags, minPrice) => {
   return useMemo(() => {
     let sortedGames = games;
 
     if (minPrice) {
-      sortedGames = sortedGames.filter((game) => parseFloat(game.price) > minPrice);
+      sortedGames = sortByMinPrice(sortedGames, minPrice);
     }
 
     if (sort === 'title') {
-      sortedGames = [...sortedGames].sort((a, b) => a[sort].localeCompare(b[sort]));
+      sortedGames = sortByTitle(sortedGames, sort);
     }
 
     if (sort === 'price') {
-      sortedGames = [...sortedGames].sort((a, b) => parseFloat(a[sort]) - parseFloat(b[sort]));
+      sortedGames = sortByPrice(sortedGames, sort);
     }
 
     if (tags.length) {
-      sortedGames = sortedGames.filter((game) => game.tags.some((tag) => tags.includes(tag)));
+      sortedGames = sortByTags(sortedGames, tags);
     }
 
     return sortedGames;
@@ -28,7 +35,6 @@ export const useGames = ({ games, sort, tags, minPrice, query }) => {
   const sortedGames = useSortedGames(games, sort, tags, minPrice);
 
   return useMemo(() => {
-    return sortedGames.filter((game) =>
-      game.title.toLowerCase().includes(query.toLowerCase()));
+    return searchGames(sortedGames, query);
   }, [query, sortedGames]);
 };
