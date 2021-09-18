@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GamesList from '../../components/GamesList/GamesList';
+import GamesList from '../../components/GamesList';
 import GamesFilters from '../../components/GamesFilters/GamesFilters';
 import Search from '../../components/Search/Search';
 import styles from './GamesPage.module.scss';
