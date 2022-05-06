@@ -1,26 +1,15 @@
-import React, { useState } from 'react';
-import styles from './Button.module.scss';
+import React from 'react';
 
 const Button = (props) => {
   const {
     children,
     className,
   } = props;
-  const [animation, setAnimation] = useState(false);
 
   return (
     <button
-      {...props}
-      className={
-        animation ? `${className} ${styles.shakeAnimation}` : `${className}`
-      }
-      onMouseEnter={() => {
-        setAnimation(true);
-      }}
-      onMouseLeave={() => {
-        setAnimation(false);
-      }}
-    >
+      className={className}
+      {...props}>
       {children}
     </button>
   );
