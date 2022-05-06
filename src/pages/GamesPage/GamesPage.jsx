@@ -21,6 +21,8 @@ const GamesPage = () => {
     query: filter.query,
   });
 
+  console.log(GamesFilters);
+
   return (
     <Layout>
       <Search
