@@ -1,34 +1,30 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
+import debounce from 'lodash.debounce';
+
 import { Input, Button } from 'antd';
 import styles from './Search.module.scss';
 
 const Search = (props) => {
-  const {
-    title,
-    filter,
-    setFilter,
-  } = props;
-  const input = useRef(null);
+  const inputRef = useRef('');
 
-  const searchGame = () => {
-    setFilter({ ...filter, query: input.current.state.value });
-  };
+  const handleSearchGame = useMemo(() => {
+    return debounce((event) => {
+      props.setFilter({ ...props.filter, query: event.target.value });
+    }, 500);
+  }, [props.filter]);
 
   return (
     <section>
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.subTitle}>{`Search ${title}`}</p>
+      <h2 className={styles.title}>{props.title}</h2>
+      <p className={styles.subTitle}>{`Search ${props.title}`}</p>
       <fieldset className={styles.searchContainer}>
         <Input
-          ref={input}
-          value={filter.query}
-          placeholder={`Search ${title}`}
-          onChange={(event) => setFilter({ ...filter, query: event.target.value })}
-          className={styles.searchInput}
-        />
-        <Button
-          className={styles.searchButton}
-          onClick={searchGame}>Search</Button>
+          ref={inputRef}
+          value={inputRef.current.value}
+          placeholder={`Search ${props.title}`}
+          onChange={handleSearchGame}
+          className={styles.searchInput} />
+        <Button className={styles.searchButton}>Search</Button>
       </fieldset>
     </section>
   );

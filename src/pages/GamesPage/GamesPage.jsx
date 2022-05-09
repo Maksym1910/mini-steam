@@ -8,10 +8,7 @@ import { useGames } from '../../hooks/useGames';
 import { useSelector } from 'react-redux';
 
 const GamesPage = () => {
-  const {
-    games,
-  } = useSelector((state) => state.games);
-
+  const { games } = useSelector((state) => state.games);
   const [filter, setFilter] = useState({ sort: '', query: '', tags: [], minPrice: 0 });
   const fullFilteredGames = useGames({
     games,
@@ -20,8 +17,6 @@ const GamesPage = () => {
     minPrice: filter.minPrice,
     query: filter.query,
   });
-
-  console.log(GamesFilters);
 
   return (
     <Layout>
