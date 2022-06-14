@@ -1,5 +1,6 @@
 {
   "name": "mini-steam",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +21,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm run build && cd build && copy index.html 200.html && surge"
+    "deploy": "npm run build && cd build && copy index.html 200.html && surge",
+    "lint": "eslint .",
+    "test:unit": "node ./scripts/unit-tests.js",
+    "test:e2e": "node ./scripts/e2e-tests.js"
   },
   "eslintConfig": {
     "extends": [

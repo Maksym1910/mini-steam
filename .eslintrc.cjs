@@ -19,6 +19,6 @@ module.exports = {
     'max-len': ['error', { code: 100 }],
     'import/prefer-default-export': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'error',
   },
 };
