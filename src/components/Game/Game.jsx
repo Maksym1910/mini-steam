@@ -48,6 +48,7 @@ const Game = (props) => {
         <span className={styles.gameCardPrice}>{props.gameInfo.price}</span>
       </div>
       <div className={styles.gameCardDesc}>
+        <span className={styles.gameGenres}>Genres: {props.gameInfo.tags.join(', ')}</span>
         <p className={styles.gameCardDescText}>{props.gameInfo.desc}</p>
         {
           isGameInLibrary() ?
