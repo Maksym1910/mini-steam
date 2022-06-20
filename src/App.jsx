@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter/AppRouter.jsx';
 import Header from './components/Header/Header';
 import { getGames } from './API/games-service.js';
-import { isAuthSelector } from './app-selector.js';
+import { isAuthSelector } from './shared/selectors/auth-selector.js';
 
 import 'antd/dist/antd.css';
 import './index.css';

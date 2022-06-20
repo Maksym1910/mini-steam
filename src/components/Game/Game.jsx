@@ -10,7 +10,7 @@ import {
   addGameToLibraryAction,
   removeGameFromLibraryAction,
 } from '../../redux/actions/gamesActions';
-import { libraryGamesSelector } from './game-selector.js';
+import { libraryGamesSelector } from '../../shared/selectors/games-selector.js';
 
 const Game = (props) => {
   const dispatch = useDispatch();
