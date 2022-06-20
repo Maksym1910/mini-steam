@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+
 import FilterByTag from '../FilterByTag/FilterByTag';
 import SortSelect from '../SortSelect/SortSelect';
 import styles from './GamesFilters.module.scss';
@@ -9,34 +10,36 @@ const GamesFilters = (props) => {
     filter,
     setFilter,
   } = props;
+  const sortSelectOptions = [
+    { value: 'title', body: 'By title' },
+    { value: 'price', body: 'By price' },
+  ];
 
-  const filterByPrice = (price) => {
+  const filterByPrice = useCallback((price) => {
     setFilter({ ...filter, minPrice: price });
-  };
+  }, [filter, setFilter]);
 
-  const filterByTags = (checkedValues) => {
+  const filterByTags = useCallback((checkedValues) => {
     setFilter({ ...filter, tags: checkedValues });
-  };
+  }, [filter, setFilter]);
+
+  const handleSortSelectChange = useCallback((selectedSort) => {
+    setFilter({ ...filter, sort: selectedSort });
+  }, [filter, setFilter]);
 
   return (
     <section className={styles.container}>
       <FilterByPrice
         filter={filter}
-        onChange={filterByPrice}
-      />
+        onChange={filterByPrice} />
       <SortSelect
         defaultValue="Sort by"
-        options={[
-          { value: 'title', body: 'By title' },
-          { value: 'price', body: 'By price' },
-        ]}
+        options={sortSelectOptions}
         value={filter.sort}
-        onChange={(selectedSort) => setFilter({ ...filter, sort: selectedSort })}
-      />
+        onChange={handleSortSelectChange} />
       <FilterByTag
         tags={['indie', 'action', 'adventure']}
-        onChange={filterByTags}
-      />
+        onChange={filterByTags} />
     </section>
   );
 };

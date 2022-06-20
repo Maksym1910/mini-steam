@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+
 import { Checkbox } from 'antd';
 import styles from './FilterByTag.module.scss';
 import classNames from 'classnames';
@@ -8,19 +9,19 @@ const FilterByTag = (props) => {
     tags,
     onChange,
   } = props;
+  const checkboxGroupStyles = classNames(styles.tagContainer, styles.tagLabel);
 
-  const checkedValues = (checkedValues) => {
+  const checkedValues = useCallback((checkedValues) => {
     onChange(checkedValues);
-  };
+  }, [onChange]);
 
   return (
     <section>
       <h2>Filter by tag</h2>
       <Checkbox.Group
-        className={classNames(styles.tagContainer, styles.tagLabel)}
+        className={checkboxGroupStyles}
         options={tags}
-        onChange={checkedValues}
-      />
+        onChange={checkedValues} />
     </section>
   );
 };

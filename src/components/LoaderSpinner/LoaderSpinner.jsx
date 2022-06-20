@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './LoaderSpinner.css';
 
 const LoaderSpinner = () => {
@@ -19,7 +20,6 @@ const LoaderSpinner = () => {
         <div/>
       </div>
     </div>
-
   );
 };
 

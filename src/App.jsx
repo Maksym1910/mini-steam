@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
-import 'antd/dist/antd.css';
-import './index.css';
-import { BrowserRouter } from 'react-router-dom';
-import AppRouter from './components/AppRouter';
-import Header from './components/Header/Header';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { authAction } from './redux/actions/authActions';
 import { getGamesAction } from './redux/actions/gamesActions';
-import { getGames } from './API/gamesService';
 
-function App() {
-  const isAuth = useSelector((state) => state.auth.isAuth);
+import { BrowserRouter } from 'react-router-dom';
+import AppRouter from './components/AppRouter/AppRouter.jsx';
+import Header from './components/Header/Header';
+import { getGames } from './API/games-service.js';
+import { isAuthSelector } from './app-selector.js';
+
+import 'antd/dist/antd.css';
+import './index.css';
+
+const App = (props) => {
+  const isAuth = useSelector(isAuthSelector);
   const dispatch = useDispatch();
 
   useEffect(async () => {
@@ -28,6 +32,6 @@ function App() {
       <AppRouter />
     </BrowserRouter>
   );
-}
+};
 
 export default App;
