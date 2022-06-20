@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { Form } from 'antd';
 import Layout from '../Layout/Layout';
 import styles from './Form.module.scss';
+import { FORM_NAME } from './constants.js';
 
 const CustomForm = (props) => {
   const {
@@ -12,13 +14,11 @@ const CustomForm = (props) => {
 
   return (
     <Layout
-      container={styles.container}
-    >
+      container={styles.container}>
       <Form
-        name="normal_login"
+        name={FORM_NAME}
         className="login-form"
-        onFinish={onFinish}
-      >
+        onFinish={onFinish}>
         <h2 className={styles.formTitle}>{title}</h2>
         {children}
       </Form>

@@ -15,25 +15,20 @@ const Auth = (props) => {
     btnStyles,
     options,
   } = props;
+  const buttonStyles = classNames(btnStyles.button, btnStyles.buttonPrimary, btnStyles.buttonBlock);
 
   return (
-    <Form
-      title={formTitle}
-      onFinish={onSubmit}
-    >
-      {options.map((option, index) => (
-        <FormItem
-          key={index}
-          type={option.type}
-          title={option.inputTitle}
-        />
-      ))}
-      <Button
-        type="primary"
-        className={classNames(btnStyles.button, btnStyles.buttonPrimary, btnStyles.buttonBlock)}
-      >
-        {formTitle}
-      </Button>
+    <Form title={formTitle} onFinish={onSubmit}>
+      {
+        options.map((option, index) => (
+          <FormItem
+            key={index}
+            type={option.type}
+            title={option.inputTitle}
+          />
+        ))
+      }
+      <Button type="primary" className={buttonStyles}>{formTitle}</Button>
       <p className={styles.delimiter}>or</p>
       <div className={styles.link}>
         <Link to={secondFormOption.link}>{secondFormOption.title}</Link>

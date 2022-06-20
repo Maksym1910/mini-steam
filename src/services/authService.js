@@ -1,6 +1,6 @@
 import { registrationValidator } from './authValidation';
 
-const register = async (inputValues) => {
+export const register = async (inputValues) => {
   const registrationData = {
     email: inputValues.Email,
     password: inputValues.Password,
@@ -26,7 +26,7 @@ const register = async (inputValues) => {
   alert(message);
 };
 
-const login = async (inputValues, dispatch, authAction) => {
+export const login = async (inputValues, dispatch, authAction) => {
   const loginData = {
     email: inputValues.Email,
     password: inputValues.Password,
@@ -50,9 +50,4 @@ const login = async (inputValues, dispatch, authAction) => {
     localStorage.setItem('AUTH', JSON.stringify(jwtToken));
     dispatch(authAction(true));
   }
-};
-
-export {
-  register,
-  login,
 };

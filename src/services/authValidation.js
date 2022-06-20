@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const registrationValidator = async (registrationData) => {
+export const registrationValidator = async (registrationData) => {
   const emailTlds = ['com', 'net', 'ru', 'ua'];
 
   const schema = Joi.object({
@@ -27,9 +27,4 @@ const registrationValidator = async (registrationData) => {
   } catch (err) {
     return err;
   }
-};
-
-
-export {
-  registrationValidator,
 };

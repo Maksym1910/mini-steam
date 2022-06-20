@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+
+import { register } from '../../services/authService';
+import {
+  loginFormConfig,
+  REGISTER_FORM_NAME,
+  registerFormInputs,
+} from './constants.js';
+
 import styles from './Auth.module.scss';
 import btnStyles from '../../components/Button/Button.module.scss';
 import Auth from '../../components/Auth/Auth';
-import { register } from '../../services/authService';
 import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner';
 
 const Register = () => {
@@ -20,17 +27,11 @@ const Register = () => {
         isRegistering ?
           <LoaderSpinner /> :
           <Auth
-            formTitle='Register'
-            secondFormOption={{ link: '/login', title: 'Login' }}
+            formTitle={REGISTER_FORM_NAME}
+            secondFormOption={loginFormConfig}
             onSubmit={handleRegister}
             btnStyles={btnStyles}
-            options={[
-              { inputTitle: 'Email', type: 'text' },
-              { inputTitle: 'Password', type: 'password' },
-              { inputTitle: 'Username', type: 'text' },
-              { inputTitle: 'Age', type: 'text' },
-            ]}
-          />
+            options={registerFormInputs} />
       }
     </section>
   );
