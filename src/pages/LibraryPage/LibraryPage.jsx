@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import { libraryGamesSelector } from './library-page-selector.js';
+import { libraryGamesSelector } from '../../shared/selectors/games-selector.js';
 
 import Layout from '../../components/Layout/Layout';
 import GamesList from '../../components/GamesList/GamesList';

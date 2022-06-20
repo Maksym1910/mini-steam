@@ -8,7 +8,7 @@ import {
 import { privateRoutes, publicRoutes } from '../../router/router.js';
 
 import { useSelector } from 'react-redux';
-import { isAuthSelector } from './app-router-selector.js';
+import { isAuthSelector } from '../../shared/selectors/auth-selector.js';
 
 const AppRouter = () => {
   const isAuth = useSelector(isAuthSelector);
