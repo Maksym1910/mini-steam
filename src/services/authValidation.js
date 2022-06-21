@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 export const registrationValidator = async (registrationData) => {
-  const emailTlds = ['com', 'net', 'ru', 'ua'];
+  const emailTlds = ['com', 'net', 'ua'];
 
   const schema = Joi.object({
     email: Joi.string()
